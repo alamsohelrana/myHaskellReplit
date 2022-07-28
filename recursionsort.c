@@ -16,9 +16,7 @@ int main(){
 		printf(" %d",arr[q]);
 	}
 	printf("\n");
-	
-	/*int tarr[3] = {99,111,3};*/
-	
+		
 	int *mysortedarr;
 	mysortedarr = recursionsort(arr,n);
 	printf("sorted array is    : ");
