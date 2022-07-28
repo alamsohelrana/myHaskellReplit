@@ -1,17 +1,15 @@
 #include<stdio.h>
 
-int n = 6;
-int arr[6] = {78,67,56,45,34,23};
-int dum[1] = {32};
+int arr[] = {78,67,56,45,34,23};
+int n = sizeof(arr) / sizeof(arr[0]);
 int *recursionsort();
 int getMin();
 
 int main(){
-	int length = sizeof(arr) / sizeof(arr[0]) ;	
-	printf("Array Length calculated %d \n",length);
+	
+	printf("Array Length calculated %d \n",n);
 	printf("smallest element is %d \n",getMin(arr,n));
-	
-	
+		
 	printf("unsorted array is  : ");
 	int q;
 	for(q=0;q<n;q++){
@@ -23,7 +21,7 @@ int main(){
 	
 	int *mysortedarr;
 	mysortedarr = recursionsort(arr,n);
-	printf("sorted array is  : ");
+	printf("sorted array is    : ");
 	int m;
 	for(m=0;m<n;m++){
 		printf(" %d",mysortedarr[m]);
@@ -76,10 +74,7 @@ int *recursionsort(int arr[],int length){
 		
 		int *reducedsortedarr;
 		reducedsortedarr = recursionsort(newarr,(length - 1));
-		
-		//int sortedarr[length];
-		
-		//sortedarr[0]=minimum;
+
 		int k;
 		for(k=1;k<length;k++){
 			arr[k]=reducedsortedarr[k-1];
